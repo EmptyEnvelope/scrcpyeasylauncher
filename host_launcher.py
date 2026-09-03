@@ -285,6 +285,9 @@ class ConfigDialog:
 
         self.win = tk.Toplevel(self.root)
         self.win.title("Scrcpy 启动配置")
+        ico_path = get_resource_path("app.ico")
+        if os.path.exists(ico_path):
+            self.win.iconbitmap(ico_path)
         self.win.geometry("380x370")
         self.win.resizable(False, False)
         self.win.attributes("-topmost", True)
@@ -429,6 +432,13 @@ class ConfigDialog:
 
     def on_close(self):
         self.win.destroy()
+
+def get_resource_path(relative_path):
+    """获取资源绝对路径，兼容开发环境与 PyInstaller 打包环境"""
+    if hasattr(sys, "_MEIPASS"):
+        return os.path.join(sys._MEIPASS, relative_path)
+    return os.path.join(os.path.abspath("."), relative_path)
+
 
 def main():
     root = tk.Tk()
