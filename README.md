@@ -1,5 +1,6 @@
 # scrcpylauncher
 scrcpy简单显示配置显示器
+
 <img width="571" height="603" alt="image" src="https://github.com/user-attachments/assets/fe9ea6ea-030c-4e1e-a623-2ec3ca6c3155" /> 
 
 可以配置窗口模式和全屏模式
